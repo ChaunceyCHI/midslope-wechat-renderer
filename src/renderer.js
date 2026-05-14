@@ -2,10 +2,55 @@ import { marked } from "marked";
 import juice from "juice";
 import themeCss from "./theme.css?raw";
 
+function escapeHtmlAttr(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 function preprocessMarkdown(markdown) {
-  return markdown.replace(/<!-- figure -->\s*!\[(.*?)\]\((.*?)\)/g, (_match, alt, src) => {
-    return `<figure><img src="${src}" alt="${alt}"><figcaption>${alt}</figcaption></figure>`;
-  });
+  const lines = markdown.split(/\r?\n/);
+  const output = [];
+  let figurePending = false;
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    if (trimmed === "<!-- figure -->") {
+      figurePending = true;
+      continue;
+    }
+
+    const imageMatch = trimmed.match(/^!\[(.*?)\]\((.*?)\)\s*$/);
+
+    if (figurePending && imageMatch) {
+      const alt = imageMatch[1];
+      const src = imageMatch[2];
+
+      output.push(
+        `<figure><img src="${escapeHtmlAttr(src)}" alt="${escapeHtmlAttr(alt)}"><figcaption>${alt}</figcaption></figure>`
+      );
+
+      output.push("");
+      figurePending = false;
+      continue;
+    }
+
+    if (figurePending) {
+      output.push("<!-- figure -->");
+      figurePending = false;
+    }
+
+    output.push(line);
+  }
+
+  if (figurePending) {
+    output.push("<!-- figure -->");
+  }
+
+  return output.join("\n");
 }
 
 function postprocessHtml(html) {
