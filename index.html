@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>MidSlope WeChat Renderer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 24px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Microsoft YaHei", sans-serif;
+            background: #f6f7f9;
+            color: #222;
+        }
+
+        .app {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .panel {
+            background: #fff;
+            border-radius: 14px;
+            padding: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        textarea {
+            width: 100%;
+            height: 720px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 14px;
+            line-height: 1.6;
+            resize: vertical;
+        }
+
+        button {
+            margin-right: 8px;
+            margin-bottom: 12px;
+            padding: 8px 14px;
+            border: 0;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #3c70c6;
+            color: white;
+            font-size: 14px;
+        }
+
+        #preview {
+            max-width: 430px;
+            min-height: 720px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 16px;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <section class="panel">
+            <h2>Markdown 输入</h2>
+            <button id="renderBtn">生成预览</button>
+            <button id="copyBtn">复制到公众号</button>
+            <textarea id="markdownInput" placeholder="把 Markdown 文章粘贴到这里"></textarea>
+        </section>
+
+        <section class="panel">
+            <h2>公众号预览</h2>
+            <div id="preview"></div>
+        </section>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "midslope-wechat-renderer",
+  "version": "1.0.0",
+  "description": "MidSlope local renderer for converting Markdown articles into WeChat Official Account rich HTML.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "midslope",
+    "wechat",
+    "markdown",
+    "renderer"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "juice": "^11.1.1",
+    "marked": "^18.0.3",
+    "vite": "^8.0.13"
+  }
+}

@@ -1,0 +1,334 @@
+.midslope-root {
+  margin: 0;
+  padding: 0 10px;
+  background-color: transparent;
+  font-family: Optima, "PingFang SC", "Microsoft YaHei", "Noto Serif SC", serif;
+  font-size: 15.5px;
+  color: #243027;
+  line-height: 1.70;
+  letter-spacing: 0.012em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+/* 正文段落 */
+.midslope-root p {
+  margin: 0;
+  padding: 6px 0;
+  color: #35413a;
+  font-size: 15.5px;
+  line-height: 1.70;
+  letter-spacing: 0.012em;
+  text-align: left;
+}
+
+/* H1：文章主标题，对应 Markdown # */
+.midslope-root h1 {
+  margin: 4px 0 20px 0;
+  padding: 0;
+  text-align: center;
+  line-height: 1.38;
+  font-weight: normal;
+}
+
+.midslope-root .midslope-h1-text {
+  display: inline-block;
+  color: #123f2a;
+  font-size: 21px;
+  font-weight: 750;
+  line-height: 1.38;
+  letter-spacing: 0.035em;
+}
+
+/* H2：大栏目标题，对应 Markdown ## */
+.midslope-root h2 {
+  margin: 18px 0 12px 0;
+  padding: 0;
+  text-align: center;
+  line-height: 1.32;
+  font-weight: normal;
+}
+
+.midslope-root .midslope-title-mark {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 0 auto 2px auto;
+  padding: 0;
+  background: rgba(18, 63, 42, 0.52);
+  border-radius: 999px;
+  border-bottom: none;
+}
+
+.midslope-root .midslope-title-text {
+  display: inline-block;
+  padding: 0 10px 2px 10px;
+  color: #123f2a;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid rgba(18, 63, 42, 0.22);
+}
+
+/* H3：小节标题，对应 Markdown ### */
+.midslope-root h3 {
+  margin: 18px 0 7px 0;
+  padding: 0;
+  line-height: 1.45;
+  font-weight: normal;
+}
+
+.midslope-root .midslope-subtitle-text {
+  display: inline-block;
+  padding-left: 8px;
+  color: #1d2f24;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.012em;
+  border-left: 3px solid rgba(18, 63, 42, 0.68);
+}
+
+/* H4：小点标题，对应 Markdown #### */
+.midslope-root h4 {
+  margin: 13px 0 4px 0;
+  padding: 0;
+  line-height: 1.45;
+  font-weight: normal;
+}
+
+.midslope-root .midslope-minor-dot {
+  display: inline-block;
+  margin-right: 6px;
+  color: rgba(18, 63, 42, 0.78);
+  font-size: 15.5px;
+  font-weight: 700;
+}
+
+.midslope-root .midslope-minor-title-text {
+  display: inline-block;
+  color: #2f3a33;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.012em;
+}
+
+/* H5：辅助标题，对应 Markdown ##### */
+.midslope-root h5 {
+  margin: 10px 0 3px 0;
+  padding: 0;
+  line-height: 1.45;
+  font-weight: normal;
+}
+
+.midslope-root .midslope-soft-title-text {
+  display: inline-block;
+  color: #4e5b52;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+/* H6：最弱标题，对应 Markdown ###### */
+.midslope-root h6 {
+  margin: 8px 0 2px 0;
+  padding: 0;
+  line-height: 1.45;
+  font-weight: normal;
+}
+
+.midslope-root .midslope-muted-title-text {
+  display: inline-block;
+  color: #7f8d7c;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+/* 加粗 */
+.midslope-root strong {
+  color: #17281e;
+  font-weight: 700;
+}
+
+/* 斜体 */
+.midslope-root em {
+  color: #4e5b52;
+  font-style: italic;
+}
+
+/* 删除线 */
+.midslope-root del {
+  color: #8a9288;
+  text-decoration: line-through;
+}
+
+/* 兼容旧写法：单独一行的 **小标题** */
+.midslope-root p strong:only-child {
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: -1px;
+  padding-left: 8px;
+  color: #1d2f24;
+  font-size: 16px;
+  line-height: 1.45;
+  border-left: 3px solid rgba(18, 63, 42, 0.68);
+}
+
+/* 图片 */
+.midslope-root img {
+  display: block;
+  max-width: 100%;
+  margin: 10px auto 4px auto;
+  border-radius: 8px;
+}
+
+/* 图注图片 */
+.midslope-root figure {
+  margin: 12px 0;
+  padding: 0;
+  display: block;
+  text-align: center;
+}
+
+/* figure 内图片 */
+.midslope-root figure img {
+  display: block;
+  max-width: 100%;
+  margin: 10px auto 2px auto;
+  border-radius: 8px;
+}
+
+/* 图注：贴近图片，靠右显示 */
+.midslope-root figcaption {
+  margin: 1px 0 0 0;
+  padding: 0 2px 0 0;
+  color: #8a9288;
+  font-size: 12.5px;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  text-align: right;
+}
+
+/* 代码块 */
+.midslope-root pre {
+  margin: 14px 0;
+  padding: 0;
+  border-radius: 8px;
+  background: #102a1d;
+  overflow-x: auto;
+  box-shadow: 0 6px 18px rgba(18, 63, 42, 0.12);
+}
+
+.midslope-root pre code {
+  display: block;
+  padding: 14px;
+  color: #d7ded5;
+  background: #102a1d;
+  font-family: Consolas, Monaco, Menlo, "Courier New", monospace;
+  font-size: 12.5px;
+  line-height: 1.58;
+  white-space: pre-wrap;
+}
+
+/* 行内 code */
+.midslope-root p code,
+.midslope-root li code,
+.midslope-root td code {
+  display: inline;
+  padding: 2px 5px;
+  color: #123f2a;
+  background: rgba(18, 63, 42, 0.08);
+  border-radius: 4px;
+  font-family: Consolas, Monaco, Menlo, "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+/* 链接 */
+.midslope-root a {
+  color: #123f2a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(18, 63, 42, 0.32);
+}
+
+/* 无序列表 / 有序列表 */
+.midslope-root ul,
+.midslope-root ol {
+  margin: 4px 0 8px 0;
+  padding-left: 1.25em;
+  color: #35413a;
+  font-size: 15.5px;
+  line-height: 1.70;
+  letter-spacing: 0.012em;
+}
+
+.midslope-root li {
+  margin: 2px 0;
+  padding: 0;
+}
+
+.midslope-root li p {
+  padding: 0;
+  font-size: 15.5px;
+  line-height: 1.70;
+}
+
+/* 任务列表 */
+.midslope-root input[type="checkbox"] {
+  margin-right: 6px;
+  accent-color: #123f2a;
+}
+
+/* 分割线 */
+.midslope-root hr {
+  border: none;
+  border-top: 1px solid rgba(18, 63, 42, 0.12);
+  margin: 24px 0;
+}
+
+/* 引用块 */
+.midslope-root blockquote {
+  margin: 12px 0;
+  padding: 8px 12px;
+  color: #586159;
+  background: rgba(18, 63, 42, 0.055);
+  border-left: 3px solid rgba(18, 63, 42, 0.46);
+  border-radius: 4px;
+}
+
+.midslope-root blockquote p {
+  padding: 2px 0;
+  color: #586159;
+  font-size: 15px;
+  line-height: 1.58;
+}
+
+/* 表格 */
+.midslope-root table {
+  width: 100%;
+  margin: 14px 0;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #35413a;
+}
+
+.midslope-root th,
+.midslope-root td {
+  padding: 7px 9px;
+  border: 1px solid rgba(18, 63, 42, 0.12);
+  text-align: left;
+  vertical-align: top;
+}
+
+.midslope-root th {
+  color: #17281e;
+  font-weight: 700;
+  background: rgba(18, 63, 42, 0.055);
+}
