@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0 10px;
   background-color: transparent;
-  font-family: Optima, "PingFang SC", "Microsoft YaHei", "Noto Serif SC", serif;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
   font-size: 15.5px;
   color: #243027;
-  line-height: 1.70;
+  line-height: 1.64;
   letter-spacing: 0.012em;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -15,10 +15,10 @@
 /* 正文段落 */
 .midslope-root p {
   margin: 0;
-  padding: 6px 0;
+  padding: 4px 0;
   color: #35413a;
   font-size: 15.5px;
-  line-height: 1.70;
+  line-height: 1.64;
   letter-spacing: 0.012em;
   text-align: left;
 }
@@ -50,26 +50,20 @@
   font-weight: normal;
 }
 
+/* 系统级版本：去掉上短线，降低装饰噪音 */
 .midslope-root .midslope-title-mark {
-  display: block;
-  width: 24px;
-  height: 2px;
-  margin: 0 auto 2px auto;
-  padding: 0;
-  background: rgba(18, 63, 42, 0.52);
-  border-radius: 999px;
-  border-bottom: none;
+  display: none;
 }
 
 .midslope-root .midslope-title-text {
   display: inline-block;
-  padding: 0 10px 2px 10px;
+  padding: 0 10px 3px 10px;
   color: #123f2a;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.35;
   letter-spacing: 0.06em;
-  border-bottom: 1px solid rgba(18, 63, 42, 0.22);
+  border-bottom: 1px solid rgba(18, 63, 42, 0.18);
 }
 
 /* H3：小节标题，对应 Markdown ### */
@@ -88,7 +82,7 @@
   font-weight: 700;
   line-height: 1.45;
   letter-spacing: 0.012em;
-  border-left: 3px solid rgba(18, 63, 42, 0.68);
+  border-left: 3px solid rgba(18, 63, 42, 0.58);
 }
 
 /* H4：小点标题，对应 Markdown #### */
@@ -102,7 +96,7 @@
 .midslope-root .midslope-minor-dot {
   display: inline-block;
   margin-right: 6px;
-  color: rgba(18, 63, 42, 0.78);
+  color: rgba(18, 63, 42, 0.68);
   font-size: 15.5px;
   font-weight: 700;
 }
@@ -143,7 +137,7 @@
 
 .midslope-root .midslope-muted-title-text {
   display: inline-block;
-  color: #7f8d7c;
+  color: #687366;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.45;
@@ -164,8 +158,23 @@
 
 /* 删除线 */
 .midslope-root del {
-  color: #8a9288;
+  color: #687366;
   text-decoration: line-through;
+}
+
+/* 高亮：支持 HTML <mark> */
+.midslope-root mark {
+  padding: 0 3px;
+  color: #17281e;
+  background: rgba(18, 63, 42, 0.12);
+  border-radius: 3px;
+}
+
+/* 上标 / 下标 */
+.midslope-root sup,
+.midslope-root sub {
+  font-size: 75%;
+  line-height: 0;
 }
 
 /* 兼容旧写法：单独一行的 **小标题** */
@@ -177,13 +186,15 @@
   color: #1d2f24;
   font-size: 16px;
   line-height: 1.45;
-  border-left: 3px solid rgba(18, 63, 42, 0.68);
+  border-left: 3px solid rgba(18, 63, 42, 0.58);
 }
 
 /* 图片 */
 .midslope-root img {
   display: block;
+  width: 100%;
   max-width: 100%;
+  height: auto;
   margin: 10px auto 4px auto;
   border-radius: 8px;
 }
@@ -199,7 +210,9 @@
 /* figure 内图片 */
 .midslope-root figure img {
   display: block;
+  width: 100%;
   max-width: 100%;
+  height: auto;
   margin: 10px auto 2px auto;
   border-radius: 8px;
 }
@@ -208,7 +221,7 @@
 .midslope-root figcaption {
   margin: 1px 0 0 0;
   padding: 0 2px 0 0;
-  color: #8a9288;
+  color: #687366;
   font-size: 12.5px;
   line-height: 1.35;
   letter-spacing: 0.01em;
@@ -231,7 +244,7 @@
   color: #d7ded5;
   background: #102a1d;
   font-family: Consolas, Monaco, Menlo, "Courier New", monospace;
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.58;
   white-space: pre-wrap;
 }
@@ -239,7 +252,8 @@
 /* 行内 code */
 .midslope-root p code,
 .midslope-root li code,
-.midslope-root td code {
+.midslope-root td code,
+.midslope-root th code {
   display: inline;
   padding: 2px 5px;
   color: #123f2a;
@@ -250,11 +264,11 @@
   line-height: 1.35;
 }
 
-/* 链接 */
+/* 链接：不只靠颜色表达，保留下划线 */
 .midslope-root a {
   color: #123f2a;
   text-decoration: none;
-  border-bottom: 1px solid rgba(18, 63, 42, 0.32);
+  border-bottom: 1px solid rgba(18, 63, 42, 0.28);
 }
 
 /* 无序列表 / 有序列表 */
@@ -264,7 +278,7 @@
   padding-left: 1.25em;
   color: #35413a;
   font-size: 15.5px;
-  line-height: 1.70;
+  line-height: 1.64;
   letter-spacing: 0.012em;
 }
 
@@ -276,20 +290,39 @@
 .midslope-root li p {
   padding: 0;
   font-size: 15.5px;
-  line-height: 1.70;
+  line-height: 1.64;
 }
 
-/* 任务列表 */
-.midslope-root input[type="checkbox"] {
-  margin-right: 6px;
-  accent-color: #123f2a;
+/* 嵌套列表 */
+.midslope-root li ul,
+.midslope-root li ol {
+  margin: 2px 0 4px 0;
+  padding-left: 1.2em;
+}
+
+/* 任务列表：使用真实文本符号，避免公众号清洗 checkbox */
+.midslope-root li.midslope-task-list-item {
+  list-style: none;
+  margin-left: -1.25em;
+}
+
+.midslope-root .midslope-task-box {
+  display: inline-block;
+  width: 1.2em;
+  margin-right: 4px;
+  color: #123f2a;
+  font-weight: 700;
+}
+
+.midslope-root .midslope-task-box-unchecked {
+  color: #687366;
 }
 
 /* 分割线 */
 .midslope-root hr {
   border: none;
   border-top: 1px solid rgba(18, 63, 42, 0.12);
-  margin: 24px 0;
+  margin: 22px 0;
 }
 
 /* 引用块 */
@@ -298,7 +331,7 @@
   padding: 8px 12px;
   color: #586159;
   background: rgba(18, 63, 42, 0.055);
-  border-left: 3px solid rgba(18, 63, 42, 0.46);
+  border-left: 3px solid rgba(18, 63, 42, 0.38);
   border-radius: 4px;
 }
 
@@ -314,7 +347,7 @@
   width: 100%;
   margin: 14px 0;
   border-collapse: collapse;
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.55;
   color: #35413a;
 }
@@ -325,10 +358,17 @@
   border: 1px solid rgba(18, 63, 42, 0.12);
   text-align: left;
   vertical-align: top;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .midslope-root th {
   color: #17281e;
   font-weight: 700;
   background: rgba(18, 63, 42, 0.055);
+}
+
+/* 表格斑马纹：Juice 可尝试内联，公众号端需实测 */
+.midslope-root tbody tr:nth-child(even) {
+  background: rgba(18, 63, 42, 0.025);
 }
